@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-const Post = ({ post }) => {
+export default function Post({ post }) {
   return (
     <div>
       <span>{post.id}</span>
@@ -13,4 +13,3 @@ const Post = ({ post }) => {
   );
 };
 
-export default Post;
