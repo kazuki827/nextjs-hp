@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Layout from "../../components/Layout";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import Link from 'next/link';
+import Layout from '../../components/Layout';
+import { getAllPostIds, getPostData } from '../../lib/posts';
 
 export default function Post({ post }) {
   if (!post) {
@@ -10,7 +10,7 @@ export default function Post({ post }) {
   return (
     <Layout title={post.title}>
       <p className="m-4">
-        {"ID : "}
+        {'ID : '}
         {post.id}
       </p>
       <p className="mb-8 text-xl font-bold">{post.title}</p>
@@ -41,15 +41,14 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: false
   };
 }
 export async function getStaticProps({ params }) {
-  //const { post: post } = await getPostData(params.id);
   const post = await getPostData(params.id);
   return {
     props: {
-      post,
-    },
+      post
+    }
   };
 }
